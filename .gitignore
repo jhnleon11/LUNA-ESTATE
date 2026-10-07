@@ -1,0 +1,11 @@
+# Generated publication copy and review artifacts
+/dist/
+/work/
+/outputs/
+/.gold-review/
+/node_modules/
+__pycache__/
+*.log
+.env
+.env.*
+!.env.example

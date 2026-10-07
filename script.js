@@ -2,17 +2,20 @@
   'use strict';
   document.documentElement.classList.add('js');
   const plots = [
-    {id:'01',name:'Тихий горизонт',region:'Сектор спокойствия',area:100,price:2900,tier:'Essence',description:'Для мечты, которой нужно немного тишины. Ваше первое прикосновение к бесконечности.'},
-    {id:'02',name:'Серебряный берег',region:'Сектор серебряных равнин',area:500,price:7900,tier:'Signature',description:'Пространство для больших замыслов. Серебристые равнины и горизонт, который принадлежит воображению.'},
-    {id:'03',name:'Мыс рассвета',region:'Сектор первого света',area:1000,price:12900,tier:'Sovereign',description:'Для тех, кто всегда смотрит дальше. Тысяча квадратных метров вашей самой смелой лунной мечты.'},
-    {id:'04',name:'Долина тишины',region:'Сектор глубоких кратеров',area:100,price:2900,tier:'Essence',description:'Камерное убежище от повседневности. Маленький символ большого внутреннего мира.'},
-    {id:'05',name:'Полуночный сад',region:'Сектор лунных теней',area:500,price:7900,tier:'Signature',description:'Место, где ничто не отвлекает от звёзд. Подарок человеку с редким чувством прекрасного.'},
-    {id:'06',name:'Земля в окне',region:'Сектор далёкого горизонта',area:1000,price:12900,tier:'Sovereign',description:'Новый взгляд на знакомый мир. Масштабная мечта для человека, которому тесно в привычных границах.'}
+    {id:'01',name:'База Спокойствия',region:'Море Спокойствия · Apollo 11',area:100,price:39000,tier:'VIP',description:'Простор Моря Спокойствия и далёкий силуэт Eagle у горизонта. Личная история рядом с большой мечтой человечества.'},
+    {id:'02',name:'Кратер Аристарх',region:'Aristarchus · Край кратера',area:500,price:7900,tier:'Signature',description:'Светлые террасы кратера и выразительный рельеф. Художественный вид, вдохновлённый одним из самых ярких мест Луны.'},
+    {id:'03',name:'Мыс Гераклида',region:'Promontorium Heraclides · Залив Радуги',area:1000,price:12900,tier:'Sovereign',description:'Горный мыс у Залива Радуги. Тихая встреча камня и света — для тех, кто всегда смотрит дальше.'},
+    {id:'04',name:'Альпийская долина',region:'Vallis Alpes · Лунные Альпы',area:100,price:2900,tier:'Essence',description:'Пространство между лунными горами. Художественная панорама по мотивам знаменитой Vallis Alpes.'},
+    {id:'05',name:'Океан Бурь',region:'Oceanus Procellarum · Лавовые равнины',area:500,price:7900,tier:'Signature',description:'Тёмные лавовые равнины и каменистые горизонты. Название настоящего лунного океана — в вашей личной коллекции.'},
+    {id:'06',name:'Море Ясности',region:'Mare Serenitatis · Видимая сторона Луны',area:1000,price:12900,tier:'Sovereign',description:'Свет Земли над лунным горизонтом. Художественный взгляд на видимую сторону Луны и простор Моря Ясности.'}
   ];
   const byId = id => document.getElementById(id);
   const number = value => new Intl.NumberFormat('ru-RU').format(value);
   let selected = plots[0];
   let certificatePlot = null;
+  let panoramaController = null;
+  let explicitSelection = false;
+  let orderOpener = null;
   let mapZoomed = false;
   const mapArt = document.querySelector('.map-art');
   const mapCamera = byId('map-camera');
@@ -27,7 +30,7 @@
     const scale = Math.min(svgWidth / 900, svgHeight / 640);
     const x = (parseFloat(svgStyle.left) || 0) + (svgWidth - 900 * scale) / 2 + (outline.x + outline.width / 2) * scale;
     const y = (parseFloat(svgStyle.top) || 0) + (svgHeight - 640 * scale) / 2 + (outline.y + outline.height / 2) * scale;
-    const zoom = mapZoomed ? 1.2 : 1;
+    const zoom = mapZoomed ? 2.4 : 1;
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
     const tx = mapZoomed ? clamp(mapArt.clientWidth / 2 - x * zoom, mapArt.clientWidth * (1 - zoom), 0) : 0;
     const ty = mapZoomed ? clamp(mapArt.clientHeight / 2 - y * zoom, mapArt.clientHeight * (1 - zoom), 0) : 0;
@@ -38,18 +41,16 @@
     mapAnnotation.style.left = `${clamp(x * zoom + tx, halfLabel, mapArt.clientWidth - halfLabel)}px`;
     mapAnnotation.style.top = `${clamp((y + outline.height * scale / 2) * zoom + ty + 12, 135, mapArt.clientHeight - labelHeight - 82)}px`;
     mapZoomButton.setAttribute('aria-pressed', String(mapZoomed));
-    mapZoomButton.innerHTML = mapZoomed ? 'Вся карта <span aria-hidden="true">−</span>' : 'Приблизить <span aria-hidden="true">＋</span>';
+    mapZoomButton.innerHTML = mapZoomed ? 'Весь атлас <span aria-hidden="true">−</span>' : 'Приблизить <span aria-hidden="true">＋</span>';
   }
-  mapZoomButton.addEventListener('click', () => {
-    mapZoomed = !mapZoomed;
-    mapAnnotation.hidden = !mapZoomed;
-    updateMapCamera();
-  });
   window.addEventListener('resize', updateMapCamera);
   function selectPlot(id) {
     const plot = plots.find(p => p.id === id);
     if (!plot) return;
     selected = plot;
+    document.querySelector('.estate-card').classList.toggle('is-vip',id==='01');
+    byId('estate-collection-label').textContent=id==='01'?'VIP / APOLLO 11':'PRIVATE COLLECTION';
+    byId('vip-note').hidden=id!=='01';
     document.querySelectorAll('[data-plot]').forEach(el => {
       const active = el.dataset.plot === id;
       el.setAttribute('aria-pressed', String(active));
@@ -61,10 +62,16 @@
     byId('estate-description').textContent = plot.description;
     byId('estate-area').textContent = `${number(plot.area)} м²`;
     byId('estate-tier').textContent = plot.tier;
-    byId('estate-price').textContent = `${number(plot.price)} ₽`;
-    if (window.matchMedia('(min-width: 761px)').matches) mapZoomed = true;
+    byId('estate-price').textContent = `${number(plot.price)} BTC`;
+    mapZoomed = true;
+    explicitSelection = true;
+    document.querySelector('.cert-sample-plot').textContent = plot.name + ' · Участок № ' + plot.id;
+    document.querySelector('.cert-sample-area').textContent = number(plot.area) + ' м² · ' + plot.tier + ' Collection';
+    const closing = document.querySelector('.closing .button');
+    closing.textContent = 'Оформить «' + plot.name + '» ↗';
     mapAnnotation.hidden = false;
     updateMapCamera();
+    panoramaController?.choose(plot);
   }
   document.querySelectorAll('[data-plot]').forEach(el => {
     el.addEventListener('click', () => selectPlot(el.dataset.plot));
@@ -178,16 +185,23 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   } else document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   const dialog = byId('estate-dialog');
-  byId('choose-estate').addEventListener('click', () => {
+  function openOrder(event) {
+    orderOpener = event.currentTarget;
     certificatePlot = {...selected};
-    byId('order-summary').textContent = `${certificatePlot.name} · Участок № ${certificatePlot.id} · ${number(certificatePlot.area)} м² · ${number(certificatePlot.price)} ₽`;
+    byId('order-panorama').src = 'assets/panoramas/' + selected.id + '-small.webp';
+    byId('order-panorama').alt = selected.name;
+    byId('order-panorama').style.objectPosition = selected.id === '06' ? '76% center' : '50% center';
+    byId('order-panorama-caption').textContent = selected.id === '01' ? 'Художественная реконструкция места высадки Apollo 11' : 'Художественная панорама';
+    byId('order-summary').textContent = `${certificatePlot.name} · Участок № ${certificatePlot.id} · ${number(certificatePlot.area)} м² · ${number(certificatePlot.price)} BTC`;
     byId('order-view').hidden = false;
     byId('result-view').hidden = true;
     dialog.setAttribute('aria-labelledby', 'dialog-title');
     document.body.classList.add('modal-open');
     dialog.showModal();
     byId('recipient').focus();
-  });
+  }
+  byId('choose-estate').addEventListener('click', openOrder);
+  document.querySelector('.closing .button').addEventListener('click', event => {if(explicitSelection){event.preventDefault();openOrder(event);}});
   function closeDialog(){dialog.close();}
   document.querySelector('.close-dialog').addEventListener('click', closeDialog);
   dialog.addEventListener('click', event => {
@@ -195,7 +209,7 @@
     const rect=dialog.getBoundingClientRect();
     if (event.clientX<rect.left || event.clientX>rect.right || event.clientY<rect.top || event.clientY>rect.bottom) closeDialog();
   });
-  dialog.addEventListener('close', () => {document.body.classList.remove('modal-open','print-certificate');byId('choose-estate').focus({preventScroll:true});});
+  dialog.addEventListener('close', () => {document.body.classList.toggle('modal-open', !!document.querySelector('dialog[open]'));document.body.classList.remove('print-certificate');(orderOpener || byId('choose-estate')).focus({preventScroll:true});});
   byId('recipient').addEventListener('input', () => byId('recipient').setCustomValidity(''));
   byId('certificate-form').addEventListener('submit', event => {
     event.preventDefault();
@@ -220,5 +234,7 @@
   });
   byId('print-certificate').addEventListener('click', () => {document.body.classList.add('print-certificate');window.print();});
   window.addEventListener('afterprint', () => document.body.classList.remove('print-certificate'));
+  if(window.LunaPanoramas) panoramaController = window.LunaPanoramas({plots, selectPlot, updateCamera: zoom => {mapZoomed=zoom;mapAnnotation.hidden=true;updateMapCamera();}, getSelected:()=>selected});
+  else mapZoomButton.addEventListener('click',()=>{mapZoomed=!mapZoomed;updateMapCamera();});
 })();
 
