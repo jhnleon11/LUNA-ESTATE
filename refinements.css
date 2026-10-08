@@ -80,7 +80,7 @@
 .lunar-certificate::before,.lunar-certificate::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.22;background:repeating-linear-gradient(18deg,#9c7a420b 0 1px,transparent 1px 4px)}
 .lunar-certificate::after{background:radial-gradient(ellipse at 50% 20%,#fff9,transparent 70%)}
 .lunar-certificate>*{position:relative}.certificate-filigree{position:absolute!important;inset:0;width:100%;height:100%;pointer-events:none}
-.lunar-certificate .cert-top{align-self:stretch;font-size:10px;letter-spacing:.22em}.lunar-certificate .cert-top>span:last-child{font-size:20px;color:#a27d3b}
+.lunar-certificate .cert-top{align-self:stretch;font-size:10px;letter-spacing:.22em}
 .lunar-certificate .cert-kicker{font-size:7px;margin-top:3px;letter-spacing:.22em;color:#8c713f}
 .cert-medallion{position:relative;width:45%;margin:3% auto 0;flex-shrink:0}.lunar-medallion{display:block;width:100%;height:auto}
 .medallion-sheen{position:absolute;inset:12%;border-radius:50%;overflow:hidden;pointer-events:none}.medallion-sheen::after{content:'';position:absolute;inset:-10% auto -10% -60%;width:35%;background:linear-gradient(90deg,transparent,#fff9,transparent);transform:skewX(-25deg);opacity:0}
@@ -133,7 +133,7 @@ dialog h2{font-size:40px}#order-summary{font-size:14px}form label{font-size:13px
  #certificate-output::before,#certificate-output::after,.medallion-sheen{display:none!important}
  #certificate-output .certificate-filigree{display:block;position:absolute!important;inset:0;width:100%;height:100%}
  #certificate-output .certificate-filigree g{stroke:#99702c}
- #certificate-output .cert-top{font-size:12px;align-self:stretch}#certificate-output .cert-top>span:last-child{font-size:25px}#certificate-output .cert-kicker{font-size:8px;margin-top:2mm}
+ #certificate-output .cert-top{font-size:12px;align-self:stretch}#certificate-output .cert-kicker{font-size:8px;margin-top:2mm}
  #certificate-output .cert-medallion{width:58mm;margin-top:5mm}#certificate-output .lunar-medallion{width:58mm;height:58mm}
  #certificate-output h3{font-size:36px;margin:2mm 0 0;line-height:1.04}#certificate-output .cert-presented{font-size:10px;margin-top:8mm}
  #certificate-output #certificate-name{font-size:43px;margin-top:5mm;line-height:1.1}#certificate-output #certificate-name.long-name{font-size:28px}
@@ -148,7 +148,7 @@ dialog h2{font-size:40px}#order-summary{font-size:14px}form label{font-size:13px
 }
 
 /* Keep the ornament and every text line within the paper frame. */
-.lunar-certificate .cert-top{justify-content:center;min-height:20px}.lunar-certificate .cert-top>span:last-child{display:none}
+.lunar-certificate .cert-top{justify-content:center;min-height:20px}
 .cert-medallion{width:39%;margin-top:2%}.lunar-certificate .cert-presented{margin-top:3%}.lunar-certificate .cert-bottom{margin-top:3%}.cert-landscape{height:26px}
 @media(max-width:760px){.cert-medallion{width:38%}.lunar-certificate .cert-top{min-height:16px}.lunar-certificate h3{font-size:27px}.lunar-certificate .cert-rule{margin:3% auto}.lunar-certificate .cert-bottom{margin-top:3%}.cert-landscape{height:22px}}
 @media print{#certificate-output .cert-top{justify-content:center;min-height:5mm}#certificate-output .cert-medallion{width:55mm;margin-top:3mm}#certificate-output .lunar-medallion{width:55mm;height:55mm}#certificate-output .cert-bottom{margin-top:5mm}#certificate-output .cert-presented{margin-top:6mm}}
@@ -178,7 +178,7 @@ dialog h2{font-size:40px}#order-summary{font-size:14px}form label{font-size:13px
  #certificate-output #certificate-name{font-size:52px;margin:0;line-height:1.05}#certificate-output #certificate-name.long-name{font-size:28px;line-height:1.08}
  #certificate-output .cert-rule{margin:0}#certificate-output #certificate-plot{font-size:14px}#certificate-output #certificate-area{font-size:12px;margin-top:2mm}
  #certificate-output .cert-bottom{margin:0;font-size:9px}#certificate-output .cert-seal{width:19mm;height:19mm;font-size:28px}
- #certificate-output .cert-landscape{height:5%;margin:0}#certificate-output .cert-legal{font-size:8px;margin:0!important}
+ #certificate-output .cert-landscape{height:5%;margin:0}#certificate-output .cert-legal{font-size:10px;margin:0!important}
 }
 
 .lunar-certificate .cert-landscape{top:89.5%;height:4%}.lunar-certificate .cert-legal{top:94%}

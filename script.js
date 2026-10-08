@@ -16,34 +16,6 @@
   let panoramaController = null;
   let explicitSelection = false;
   let orderOpener = null;
-  let mapZoomed = false;
-  const mapArt = document.querySelector('.map-art');
-  const mapCamera = byId('map-camera');
-  const mapAnnotation = byId('map-annotation');
-  const mapZoomButton = byId('map-zoom');
-  function updateMapCamera() {
-    const svg = document.querySelector('.plot-map');
-    const outline = svg.querySelector(`.plot[data-plot="${selected.id}"] path`).getBBox();
-    const svgStyle = getComputedStyle(svg);
-    const svgWidth = parseFloat(svgStyle.width);
-    const svgHeight = parseFloat(svgStyle.height);
-    const scale = Math.min(svgWidth / 900, svgHeight / 640);
-    const x = (parseFloat(svgStyle.left) || 0) + (svgWidth - 900 * scale) / 2 + (outline.x + outline.width / 2) * scale;
-    const y = (parseFloat(svgStyle.top) || 0) + (svgHeight - 640 * scale) / 2 + (outline.y + outline.height / 2) * scale;
-    const zoom = mapZoomed ? 2.4 : 1;
-    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-    const tx = mapZoomed ? clamp(mapArt.clientWidth / 2 - x * zoom, mapArt.clientWidth * (1 - zoom), 0) : 0;
-    const ty = mapZoomed ? clamp(mapArt.clientHeight / 2 - y * zoom, mapArt.clientHeight * (1 - zoom), 0) : 0;
-    mapCamera.style.transform = `translate(${tx}px, ${ty}px) scale(${zoom})`;
-    mapAnnotation.textContent = `${selected.id} / ${selected.name}`;
-    const halfLabel = mapAnnotation.offsetWidth / 2 + 16;
-    const labelHeight = mapAnnotation.offsetHeight;
-    mapAnnotation.style.left = `${clamp(x * zoom + tx, halfLabel, mapArt.clientWidth - halfLabel)}px`;
-    mapAnnotation.style.top = `${clamp((y + outline.height * scale / 2) * zoom + ty + 12, 135, mapArt.clientHeight - labelHeight - 82)}px`;
-    mapZoomButton.setAttribute('aria-pressed', String(mapZoomed));
-    mapZoomButton.innerHTML = mapZoomed ? 'Весь атлас <span aria-hidden="true">−</span>' : 'Приблизить <span aria-hidden="true">＋</span>';
-  }
-  window.addEventListener('resize', updateMapCamera);
   function selectPlot(id) {
     const plot = plots.find(p => p.id === id);
     if (!plot) return;
@@ -63,14 +35,12 @@
     byId('estate-area').textContent = `${number(plot.area)} м²`;
     byId('estate-tier').textContent = plot.tier;
     byId('estate-price').textContent = `${number(plot.price)} BTC`;
-    mapZoomed = true;
     explicitSelection = true;
     document.querySelector('.cert-sample-plot').textContent = plot.name + ' · Участок № ' + plot.id;
     document.querySelector('.cert-sample-area').textContent = number(plot.area) + ' м² · ' + plot.tier + ' Collection';
     const closing = document.querySelector('.closing .button');
     closing.textContent = 'Оформить «' + plot.name + '» ↗';
-    mapAnnotation.hidden = false;
-    updateMapCamera();
+    document.querySelector('.gift-copy .text-link').textContent = 'Создать сертификат — ' + plot.name + ' ↗';
     panoramaController?.choose(plot);
   }
   document.querySelectorAll('[data-plot]').forEach(el => {
@@ -201,6 +171,8 @@
     byId('recipient').focus();
   }
   byId('choose-estate').addEventListener('click', openOrder);
+  byId('cinema-order').addEventListener('click', openOrder);
+  document.querySelector('.gift-copy .text-link').addEventListener('click', event => {if(explicitSelection){event.preventDefault();openOrder(event);}});
   document.querySelector('.closing .button').addEventListener('click', event => {if(explicitSelection){event.preventDefault();openOrder(event);}});
   function closeDialog(){dialog.close();}
   document.querySelector('.close-dialog').addEventListener('click', closeDialog);
@@ -234,7 +206,7 @@
   });
   byId('print-certificate').addEventListener('click', () => {document.body.classList.add('print-certificate');window.print();});
   window.addEventListener('afterprint', () => document.body.classList.remove('print-certificate'));
-  if(window.LunaPanoramas) panoramaController = window.LunaPanoramas({plots, selectPlot, updateCamera: zoom => {mapZoomed=zoom;mapAnnotation.hidden=true;updateMapCamera();}, getSelected:()=>selected});
-  else mapZoomButton.addEventListener('click',()=>{mapZoomed=!mapZoomed;updateMapCamera();});
+  selectPlot(selected.id);
+  if(window.LunaPanoramas) panoramaController = window.LunaPanoramas({plots, selectPlot, getSelected:()=>selected});
 })();
 

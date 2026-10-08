@@ -7,4 +7,5 @@ const files=['index.html','styles.css','journey.css','refinements.css','gold.css
 for(const name of files)fs.copyFileSync(path.join(root,name),path.join(out,name));
 fs.cpSync(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 const oldEffects=path.join(out,'effects.css');if(fs.existsSync(oldEffects))fs.unlinkSync(oldEffects);
+const oldAtlas=path.join(out,'assets','moon-atlas.webp');if(fs.existsSync(oldAtlas))fs.unlinkSync(oldAtlas);
 console.log('Ready: '+out);
