@@ -58,12 +58,12 @@
 .estate-details dt,.estate-price>span,.estate-title>p:first-child,.micro,.plot-list small,.map-bottom,.gift-caption{font-size:12px}
 .estate-details dd,.plot-list button,.faq summary{font-size:14px}
 .estate-card-top .eyebrow{font-size:10px}.estate-title{min-height:225px}.estate-title h3{font-size:clamp(38px,3.2vw,48px)}
-.intro{background:linear-gradient(125deg,#182e45fa,#101e30f5)}.intro-grid{gap:65px}.intro-rule{margin-top:40px;font-size:12px}
-.section-heading{padding:24px 28px;background:linear-gradient(90deg,#081422f2,#091526ed);border-left:1px solid #dcc18c70;border-radius:3px}
+.intro{}.intro-grid{gap:65px}.intro-rule{margin-top:40px;font-size:12px}
+.section-heading{padding:24px 28px;}
 .section-note{max-width:290px}.plot-list{background:#101f32f5}.estate-card{background:linear-gradient(145deg,#23364c,#111e30)}
-.gift{padding-top:60px;padding-bottom:60px;gap:45px;background:linear-gradient(90deg,#081523f7 0%,#091827ed 46%,#0b1d3066 100%)}
-.gift-copy>p:not(.eyebrow){max-width:350px}.gift-copy .text-link{line-height:1.7}.questions{background:linear-gradient(90deg,#081523f2,#091827f2)}
-.steps{padding-top:45px;padding-bottom:55px;background:#081523ef}.steps .section-heading{padding:0;border:0;background:none}
+.gift{padding-top:60px;padding-bottom:60px;gap:45px;}
+.gift-copy>p:not(.eyebrow){max-width:350px}.gift-copy .text-link{line-height:1.7}.questions{}
+.steps{padding-top:45px;padding-bottom:55px;}.steps .section-heading{padding:0;border:0;background:none}
 .steps-grid{position:relative;gap:22px;margin-top:32px}.steps-grid::before{content:'';position:absolute;top:54px;left:25px;right:25px;height:1px;background:linear-gradient(90deg,#b89552,#ecd5a4,#b89552);opacity:.5}
 .steps-grid article{background:linear-gradient(145deg,#1d3148f7,#102035f7);padding:24px}.step-number{position:relative;display:inline-block;background:#182a40;padding-right:15px}
 .map-controls{top:88px}.map-art{min-height:610px}.plot text{font-size:20px;stroke-width:2px}.map-annotation{font-size:12px;line-height:1.5;white-space:normal;text-align:center;width:max-content;max-width:calc(100% - 32px)}
@@ -115,7 +115,7 @@ dialog h2{font-size:40px}#order-summary{font-size:14px}form label{font-size:13px
  .section-heading{padding:20px 18px}.section-heading h2{font-size:40px}.section-note{max-width:none;margin-top:18px}
  .estate-explorer{grid-template-columns:1fr}.estate-title{min-height:0}.estate-title h3{font-size:42px}.estate-details{gap:30px}.map-art{min-height:440px}.map-top{align-items:flex-start;top:15px;gap:5px}.map-top .fine-label{font-size:8px;padding:8px 6px}.light-toggle button{min-width:58px;padding:8px;font-size:12px}.map-controls{top:82px;right:16px}.map-bottom{font-size:11px;gap:8px}.map-bottom>span{flex:1}.plot text{font-size:23px}.map-annotation{font-size:12px}
  .plot-list{grid-template-columns:repeat(2,minmax(0,1fr))}.plot-list button{font-size:12px;padding:14px 10px}.plot-list small{font-size:11px}
- .gift{padding:38px 18px;gap:15px;background:#081523f2}.gift h2{font-size:43px}.gift-copy .text-link{font-size:13px;gap:10px}.gift-copy>p:not(.eyebrow){max-width:none}
+ .gift{padding:38px 18px;gap:15px;}.gift h2{font-size:43px}.gift-copy .text-link{font-size:13px;gap:10px}.gift-copy>p:not(.eyebrow){max-width:none}
  .certificate-scene{padding:24px 8px 8px;overflow:visible}.lunar-certificate{padding:8% 9% 8%}.lunar-certificate h3{font-size:29px}.lunar-certificate .cert-top{font-size:8px}.lunar-certificate .cert-kicker{font-size:6px}.cert-medallion{width:44%}
  .lunar-certificate .cert-presented{font-size:7px;margin-top:4%}.lunar-certificate #certificate-name,.lunar-certificate .cert-sample-name{font-size:32px}.lunar-certificate #certificate-name.long-name{font-size:21px}.lunar-certificate #certificate-plot,.cert-sample-plot{font-size:10px}.lunar-certificate #certificate-area,.cert-sample-area{font-size:9px}
  .lunar-certificate .cert-bottom{font-size:6px;margin-top:4%}.lunar-certificate .cert-seal{width:43px;height:43px;font-size:19px}.cert-landscape{height:24px}.lunar-certificate .cert-legal{font-size:6px}.gift-caption{font-size:11px;margin-top:20px}

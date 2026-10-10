@@ -13,13 +13,13 @@ body{isolation:isolate;background:#070e19}
 .space-vignette::after{content:'';position:absolute;inset:0;background:#061020;opacity:var(--scene-veil)}
 .hero{isolation:auto;background:transparent}.hero-content{z-index:1}.hero-bottom{z-index:1}
 .header{background:linear-gradient(#06102075,transparent)}
-.intro{width:min(1320px,calc(100% - 112px));padding:60px 56px;margin:65px auto 45px;background:linear-gradient(125deg,#24415bbc,#132036c7);border:1px solid #d1e8ff50;border-radius:6px;box-shadow:0 15px 65px #0003;color:var(--paper)}
+.intro{width:min(1320px,calc(100% - 112px));padding:60px 56px;margin:65px auto 45px;color:var(--paper)}
 .intro::before{border-color:#9ecbe22e;box-shadow:0 0 0 65px #7f9eb509,0 0 0 130px #7f9eb509}.intro h2 em,.intro .eyebrow,.intro .fine-label{color:var(--gold)}.intro-copy p{color:#d0dbe5}.intro-rule{border-top-color:#bdd8f440;color:#bccbd8}
 .collection{padding-top:65px}.section-heading,.gift-copy,.questions>div:first-child{position:relative;z-index:1;text-shadow:0 2px 20px #010717aa}.section-note{color:#d7e1ea}.section-note span{color:#bdccd9}
-.gift,.steps,.questions{background:linear-gradient(90deg,#07132377,#0d1b2c33);padding-left:35px;padding-right:35px;border-radius:6px;border-top-color:#c2dffa44}
+.gift,.steps,.questions{padding-left:35px;padding-right:35px}
 .gift::before{inset:0}.gift-copy>p:not(.eyebrow){color:#d0dce7}.steps-grid article{background:radial-gradient(ellipse at var(--mouse-x,50%) var(--mouse-y,0%),#80bff222,transparent 80%),linear-gradient(145deg,#233651d9,#132035e0)}.questions .faq{background:#091729b8;padding:8px 24px;border:1px solid #c8defe30;border-radius:4px}.faq details p{color:#c3d2e0}
-.closing{background:radial-gradient(ellipse at 50% 110%,#458aca55,transparent 70%),#101e3388}.closing h2{text-shadow:0 3px 30px #030c19}
-footer{background:#081424b5;padding-left:25px;padding-right:25px;border:1px solid #c8defe22;border-bottom:0}
+.closing{}.closing h2{text-shadow:0 3px 30px #030c19}
+footer{padding-left:25px;padding-right:25px}
 
 @media(max-width:1100px){.intro{width:calc(100% - 64px);padding:45px 32px}.gift,.steps,.questions{padding-left:25px;padding-right:25px}}
 @media(max-width:760px){.space-sky{object-position:60% center}.earth-depth img,.earth-depth .depth-matte{object-position:85% bottom;mask-position:85% bottom}.terrain-depth{inset:0 -10px -240px}.terrain-depth img{object-position:85% bottom}.intro{width:calc(100% - 40px);padding:36px 22px;margin:45px auto 25px}.intro-grid{gap:25px}.gift,.steps,.questions{padding-left:20px;padding-right:20px}.gift h2{font-size:clamp(38px,9vw,56px)}.questions h2{font-size:38px}.questions .faq{padding:4px 14px}}
