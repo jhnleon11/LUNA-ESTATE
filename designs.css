@@ -1,0 +1,80 @@
+/* Shared accessibility improvements and three explicitly selected art directions.
+   Keep scene geometry, outer frames and certificate paper in their original rules. */
+:root { --ui-muted: #d4cdc1; --ui-surface: #171712; --ui-contrast: #17150f; }
+.design-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 26px; }
+.design-label { font-size: 12px; color: var(--ui-muted); }
+.design-options { display: flex; flex-wrap: wrap; gap: 6px; }
+.design-options button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--ui-surface); color: var(--paper); font: 12px var(--sans); cursor: pointer; }
+.design-options button::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #dec598; flex: 0 0 auto; }
+.design-options button[data-design-choice="orbit"]::before { background: #a6dcf3; }
+.design-options button[data-design-choice="moonlight"]::before { background: #d9dde3; }
+.design-options button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); box-shadow: inset 0 -2px var(--gold); }
+.design-options button:hover { border-color: var(--gold); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible, [tabindex="0"]:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.header { gap: 24px; }
+.header nav { display: flex; gap: clamp(20px, 3vw, 44px); }
+.header nav a, .header-link { white-space: nowrap; }
+.header .brand { flex-shrink: 0; }
+.header .brand-sub { font-size: 10px; }
+.fine-label,.hero-demo,.gift-caption,.footer-credit,.footer-notice,.collection-disclaimer,.light-progress,.scroll-link,.hero-coordinate span,.eyebrow,.estate-card-top .eyebrow,.estate-details dt,.estate-price span,.plot-list small,#view-caption,#view-help,.cinema-toolbar .fine-label,#cinema-caption,#cinema-plots button { font-size: 12px; }
+.fine-label,.eyebrow { letter-spacing: .12em; }
+.map-top .fine-label { font-size: 12px; }
+.horizon-preview { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 32px; }
+.horizon-preview a { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: 4px; background: var(--ui-surface); text-decoration: none; }
+.horizon-preview figure { margin: 0; }
+.horizon-preview img { display: block; width: 100%; height: auto; aspect-ratio: 5/2; object-fit: cover; }
+.horizon-preview figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; color: var(--paper); font-size: 13px; line-height: 1.5; }
+.horizon-preview figcaption span { color: var(--gold); }
+.horizon-preview a:hover { border-color: var(--gold); }
+
+/* Orbit: cool instrument-like typography, blue accents and deep navy panels. */
+html[data-design="orbit"] { --gold: #abe0f6; --paper: #eef5fc; --muted: #becddd; --line: #9fcce44d; --panel-border: 1px solid #9fcce466; --panel-radius: 12px; --panel-surface: linear-gradient(120deg,#13283eef,#0a1725e0); --dialog-surface: linear-gradient(120deg,#13283e,#0a1725); --ui-muted: #cedcea; --ui-surface: #0f2134; --ui-contrast: #071522; }
+html[data-design="orbit"] body { background: #081727; }
+html[data-design="orbit"] :is(h1,h2,.estate-title h3,.steps-grid h3) { font-family: var(--sans); font-weight: 400; letter-spacing: -.045em; }
+html[data-design="orbit"] h1 { font-size: clamp(64px,6vw,104px); }
+html[data-design="orbit"] h1 em { background: linear-gradient(115deg,#e8f7ff,#80c9ef); background-clip: text; -webkit-background-clip: text; }
+html[data-design="orbit"] .space-sky { filter: brightness(.30) saturate(.75); }
+
+/* Moonlight: an editorial paper palette with a translucent photographic horizon. */
+html[data-design="moonlight"] { --gold: #765421; --paper: #192536; --muted: #435269; --line: #43526940; --panel-border: 1px solid #43526955; --panel-radius: 4px; --panel-surface: linear-gradient(120deg,#f8f7f3f5,#e8ecf0f2); --dialog-surface: linear-gradient(120deg,#f8f7f3,#e8ecf0); --ui-muted: #435269; --ui-surface: #f4f3f0; --ui-contrast: #ffffff; }
+html[data-design="moonlight"] body { background: #e7e9ed; }
+html[data-design="moonlight"] .space-stage { background: #e7e9ed; }
+html[data-design="moonlight"] .space-stage::after { content: ''; position: absolute; inset: 0; background: #e7e9edcf; }
+html[data-design="moonlight"] .hero-content::before { background: radial-gradient(ellipse at 38% 45%,#faf9f3de,transparent 76%); }
+html[data-design="moonlight"] h1 em { background: none; color: var(--gold); }
+html[data-design="moonlight"] :is(.section-heading,.gift-copy,.questions>div:first-child,.closing h2) { text-shadow: none; }
+html[data-design="moonlight"] .header { background: #f6f6f0e8; border-color: var(--line); }
+html[data-design="moonlight"] .journey-nav { background: #f6f6f0f0; border-color: var(--line); }
+html[data-design="moonlight"] .journey-nav a span { background: none; color: var(--gold); }
+html[data-design="moonlight"] .brand-mark { filter: brightness(.65); }
+
+/* Map/cinema preserve image filters and positions; only their chrome changes. */
+html:not([data-design="gold"]) :is(.intro-copy p,.gift-copy>p:not(.eyebrow),.section-note,.steps-grid p,.faq details p,.hero-lead,.hero-demo,.scroll-link,.hero-coordinate,.light-progress,.intro-rule,.gift-caption,.footer-bottom,.footer-credit,.collection-disclaimer,.estate-title p,#estate-region,.estate-details dt,.estate-price span,.drawer-note,.drawer-heading h2,.micro) { color: var(--ui-muted); }
+html:not([data-design="gold"]) :is(.button,.result-actions .button) { background: var(--gold); border-color: var(--gold); color: var(--ui-contrast); border-radius: var(--panel-radius); }
+html:not([data-design="gold"]) :is(.plot-list,.view-toolbar,.map-bottom,.estate-card,.questions .faq,.step-number,.section-note,.cinema-toolbar,#cinema-info,#cinema-plots) { background: var(--ui-surface); border-color: var(--line); }
+html:not([data-design="gold"]) .light-toggle { background: var(--ui-surface); border-color: var(--line); }
+html:not([data-design="gold"]) :is(.map-controls button,.light-toggle button,.cinema-toolbar button,#cinema-plots button,.plot-list button,input) { color: var(--paper); background: var(--ui-surface); border-color: var(--line); }
+html:not([data-design="gold"]) :is(.plot-list button[aria-pressed="true"],.light-toggle button[aria-pressed="true"],#cinema-plots button[aria-pressed="true"]) { color: var(--gold); border-color: var(--gold); background: var(--panel-surface); }
+html:not([data-design="gold"]) :is(.plot-list small,.estate-details dd,.faq summary,#view-title,#view-caption,#view-help,.header nav a,.header-link,.brand,.brand-sub,.footer-top .text-link,.order-landscape figcaption) { color: var(--paper); }
+html:not([data-design="gold"]) .steps-grid article { background: none; }
+html:not([data-design="gold"]) .steps-grid::before { background: var(--gold); }
+html:not([data-design="gold"]) .order-landscape figcaption { background: var(--ui-surface); }
+html:not([data-design="gold"]) #order-summary { color: var(--gold); border-color: var(--line); }
+html:not([data-design="gold"]) .close-dialog { background: var(--ui-surface); color: var(--gold); border-color: var(--line); }
+html:not([data-design="gold"]) :is(.vip-note,.vip-badge) { color: var(--gold); }
+html:not([data-design="gold"]) input::placeholder { color: var(--ui-muted); }
+@media (max-width:1023px) { .header nav,.header-link { display: none; } }
+@media (max-width:760px) {
+  .design-toolbar { gap: 8px; margin-bottom: 22px; }
+  .design-label { flex-basis: 100%; }
+  .design-options { gap: 5px; }
+  .design-options button { padding: 9px 10px; font-size: 12px; gap: 6px; }
+  .horizon-preview { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+  .horizon-preview a figure { display: grid; grid-template-columns: minmax(100px,42%) minmax(0,1fr); align-items: center; }
+  .horizon-preview img { aspect-ratio: 5/3; }
+  .horizon-preview figcaption { font-size: 13px; padding: 12px; }
+  html[data-design="orbit"] h1 { font-size: clamp(42px,9.5vw,72px); }
+  .cinema-toolbar .fine-label { max-width: 100px; }
+}
+@media print { .design-toolbar,.horizon-preview,#design-status { display: none!important; } }

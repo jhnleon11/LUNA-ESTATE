@@ -1,0 +1,12 @@
+{
+  "name": "luna-estate",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Учебный статический лендинг лунной коллекции",
+  "scripts": {
+    "start": "node serve.cjs",
+    "build": "node package-site.cjs",
+    "test": "node --test tests/site.test.cjs"
+  },
+  "engines": { "node": ">=18" }
+}

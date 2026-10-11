@@ -29,7 +29,7 @@ window.LunaPanoramas = function ({plots, selectPlot, getSelected}) {
       img.classList.remove('active');void img.offsetWidth;img.classList.add('active');images[active].classList.remove('active');images[active].setAttribute('aria-hidden','true');img.removeAttribute('aria-hidden');active=next;shown=p;
       panel.dataset.view='panorama';status('');$('view-help').textContent='Потяните в сторону · ← →';
       timer=setTimeout(()=>{if(current===token&&activity===driftActivity)drift(p);},reduced.matches?0:450);
-      load(plots[(plots.indexOf(p)+1)%plots.length]).catch(()=>{});
+      if(!navigator.connection?.saveData)load(plots[(plots.indexOf(p)+1)%plots.length]).catch(()=>{});
     }catch{if(current!==token)return;panel.dataset.view='error';status('Панорама «'+p.name+'» недоступна. Показан предыдущий вид; оформление работает.',true);$('view-help').textContent='Можно повторить загрузку';}
   }
   for(const event of ['pointerdown','keydown','wheel','click'])document.addEventListener(event,stopDrift,{capture:true,passive:true});
@@ -44,5 +44,5 @@ window.LunaPanoramas = function ({plots, selectPlot, getSelected}) {
   images[0].removeAttribute('aria-hidden');cinemaImages[1].setAttribute('aria-hidden','true');images[0].style.objectPosition=focal(plots[0])+'% center';panel.dataset.view='panorama';metadata(plots[0]);status('');
   images[0].addEventListener('error',()=>status('Панорама временно недоступна. Попробуйте повторить загрузку.',true));
   if(images[0].complete&&!images[0].naturalWidth)status('Панорама временно недоступна. Попробуйте повторить загрузку.',true);
-  load(plots[1]).catch(()=>{});return {choose};
+  if(!navigator.connection?.saveData)load(plots[1]).catch(()=>{});return {choose};
 };
