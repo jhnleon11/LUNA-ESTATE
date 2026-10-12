@@ -10,7 +10,16 @@
   let saved;
   try { saved = localStorage.getItem('luna-design'); } catch { /* Optional storage. */ }
   let current = valid(fromURL()) ? fromURL() : valid(saved) ? saved : 'gold';
+  const initialDesign = current;
   root.dataset.design = current;
+
+  function entryState(design) {
+    return {...(history.state || {}), lunaDesign: design};
+  }
+  function remember(method, design, url) {
+    try { history[method](entryState(design), '', url); }
+    catch { /* A restricted preview may disallow history; appearance still works. */ }
+  }
 
   function apply(design, announce = true) {
     if (!valid(design)) return;
@@ -28,13 +37,16 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     apply(current, false);
+    // Keep the original URL, including an absent design parameter and its hash.
+    // Storage changes during later switches cannot describe an older entry.
+    remember('replaceState', current, location.href);
     document.querySelectorAll('[data-design-choice]').forEach(button => {
       button.addEventListener('click', () => {
         const design = button.dataset.designChoice;
         if (!valid(design) || design === current) return;
         const url = new URL(location.href);
         url.searchParams.set('design', design);
-        history.pushState(null, '', url);
+        remember('pushState', design, url);
         apply(design);
       });
     });
@@ -43,6 +55,10 @@
         document.querySelector(`#plot-list [data-plot="${link.dataset.previewPlot}"]`)?.click();
       });
     });
-    window.addEventListener('popstate', () => apply(valid(fromURL()) ? fromURL() : 'gold'));
+    window.addEventListener('popstate', (event = {}) => {
+      const design = fromURL();
+      const remembered = event.state?.lunaDesign;
+      apply(valid(design) ? design : valid(remembered) ? remembered : initialDesign);
+    });
   });
 })();

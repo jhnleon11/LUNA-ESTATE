@@ -62,6 +62,18 @@
   const mobileJourney = document.querySelector('.mobile-journey');
   const earth = document.querySelector('.earth-depth');
   const terrainImage = document.querySelector('.terrain-night');
+  const dawnImage = document.querySelector('.terrain-dawn');
+  let dawnRequested = false;
+  function requestDawnTerrain() {
+    if (dawnRequested) return;
+    dawnRequested = true;
+    dawnImage.addEventListener('load', () => {dawnImage.dataset.ready = 'true';}, {once:true});
+    // On failure the night terrain remains visible, with no broken overlay.
+    dawnImage.closest('picture').querySelectorAll('[data-srcset]').forEach(source => {
+      source.srcset = source.dataset.srcset;
+    });
+    dawnImage.src = dawnImage.dataset.src;
+  }
   let earthDistance = 0;
   let terrainPixels = null;
   let terrainSource = '';
@@ -123,6 +135,7 @@
   });
   function updateScene() {
     const progress = reducedMotion.matches ? 0 : Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * .68)));
+    if (progress > .03) requestDawnTerrain();
     document.documentElement.style.setProperty('--dawn', progress.toFixed(3));
     document.documentElement.style.setProperty('--parallax', `${reducedMotion.matches ? 0 : Math.min(window.scrollY * .12, 90)}px`);
     const journey = reducedMotion.matches ? 0 : Math.min(1, Math.max(0, window.scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)));

@@ -1,0 +1,512 @@
+[
+  {
+    "background": "linear-gradient(120deg, rgb(33, 30, 24), rgb(21, 21, 20))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)"
+    ],
+    "dialog": "estate-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "6px",
+      "6px",
+      "6px",
+      "6px"
+    ],
+    "shadow": "none",
+    "theme": "gold",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(33, 30, 24), rgb(21, 21, 20))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)"
+    ],
+    "dialog": "panorama-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "6px",
+      "6px",
+      "6px",
+      "6px"
+    ],
+    "shadow": "none",
+    "theme": "gold",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(33, 30, 24), rgb(21, 21, 20))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)"
+    ],
+    "dialog": "plot-drawer",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "6px",
+      "6px",
+      "6px",
+      "6px"
+    ],
+    "shadow": "none",
+    "theme": "gold",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(33, 30, 24), rgb(21, 21, 20))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)"
+    ],
+    "dialog": "estate-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    },
+    "radii": [
+      "6px",
+      "6px",
+      "6px",
+      "6px"
+    ],
+    "shadow": "none",
+    "theme": "gold",
+    "width": 1440,
+    "pageBefore": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(33, 30, 24), rgb(21, 21, 20))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)",
+      "rgba(207, 183, 125, 0.4)"
+    ],
+    "dialog": "panorama-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    },
+    "radii": [
+      "6px",
+      "6px",
+      "6px",
+      "6px"
+    ],
+    "shadow": "none",
+    "theme": "gold",
+    "width": 1440,
+    "pageBefore": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(19, 40, 62), rgb(10, 23, 37))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)"
+    ],
+    "dialog": "estate-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "12px",
+      "12px",
+      "12px",
+      "12px"
+    ],
+    "shadow": "none",
+    "theme": "orbit",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(19, 40, 62), rgb(10, 23, 37))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)"
+    ],
+    "dialog": "panorama-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "12px",
+      "12px",
+      "12px",
+      "12px"
+    ],
+    "shadow": "none",
+    "theme": "orbit",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(19, 40, 62), rgb(10, 23, 37))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)"
+    ],
+    "dialog": "plot-drawer",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "12px",
+      "12px",
+      "12px",
+      "12px"
+    ],
+    "shadow": "none",
+    "theme": "orbit",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(19, 40, 62), rgb(10, 23, 37))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)"
+    ],
+    "dialog": "estate-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    },
+    "radii": [
+      "12px",
+      "12px",
+      "12px",
+      "12px"
+    ],
+    "shadow": "none",
+    "theme": "orbit",
+    "width": 1440,
+    "pageBefore": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(19, 40, 62), rgb(10, 23, 37))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)",
+      "rgba(159, 204, 228, 0.4)"
+    ],
+    "dialog": "panorama-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    },
+    "radii": [
+      "12px",
+      "12px",
+      "12px",
+      "12px"
+    ],
+    "shadow": "none",
+    "theme": "orbit",
+    "width": 1440,
+    "pageBefore": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(248, 247, 243), rgb(232, 236, 240))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)"
+    ],
+    "dialog": "estate-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "4px",
+      "4px",
+      "4px",
+      "4px"
+    ],
+    "shadow": "none",
+    "theme": "moonlight",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(248, 247, 243), rgb(232, 236, 240))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)"
+    ],
+    "dialog": "panorama-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "4px",
+      "4px",
+      "4px",
+      "4px"
+    ],
+    "shadow": "none",
+    "theme": "moonlight",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(248, 247, 243), rgb(232, 236, 240))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)"
+    ],
+    "dialog": "plot-drawer",
+    "inside": true,
+    "pageDuring": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    },
+    "radii": [
+      "4px",
+      "4px",
+      "4px",
+      "4px"
+    ],
+    "shadow": "none",
+    "theme": "moonlight",
+    "width": 360,
+    "pageBefore": {
+      "left": 20.000001907348633,
+      "right": 325.1282367706299
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(248, 247, 243), rgb(232, 236, 240))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)"
+    ],
+    "dialog": "estate-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    },
+    "radii": [
+      "4px",
+      "4px",
+      "4px",
+      "4px"
+    ],
+    "shadow": "none",
+    "theme": "moonlight",
+    "width": 1440,
+    "pageBefore": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    }
+  },
+  {
+    "background": "linear-gradient(120deg, rgb(248, 247, 243), rgb(232, 236, 240))",
+    "borders": [
+      "0.512821px",
+      "0.512821px",
+      "0.512821px",
+      "0.512821px"
+    ],
+    "colors": [
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)",
+      "rgba(67, 82, 105, 0.333)"
+    ],
+    "dialog": "panorama-dialog",
+    "inside": true,
+    "pageDuring": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    },
+    "radii": [
+      "4px",
+      "4px",
+      "4px",
+      "4px"
+    ],
+    "shadow": "none",
+    "theme": "moonlight",
+    "width": 1440,
+    "pageBefore": {
+      "left": 63.9984016418457,
+      "right": 1361.1218147277832
+    }
+  }
+]
